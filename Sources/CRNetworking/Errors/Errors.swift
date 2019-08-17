@@ -2,8 +2,8 @@
 //  Errors.swift
 //  CRNetworking
 //
-//  Created by Carlos Santos on 05/03/2018.
-//  Copyright © 2018 crsantos.info. All rights reserved.
+//  Created by Carlos Santos on 17/08/2019.
+//  Copyright © 2019 crsantos.info. All rights reserved.
 //
 
 import Foundation
