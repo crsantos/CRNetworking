@@ -37,8 +37,8 @@ open class CRNetworking {
 
     func request<
         T: Codable,
-        E: APIError>(with resourceRequest: URLResourceRequestConvertible,
-                     completion: @escaping APICompletion<T, E>) {
+        E: APIError> (with resourceRequest: URLResourceRequestConvertible,
+                      completion: @escaping APICompletion<T, E>) {
 
         let request = self.requestSerializer.serializeResource(resourceRequest)
 
@@ -55,10 +55,10 @@ private extension CRNetworking {
 
     func handleDataTaskResponse<
         T: Codable,
-        E: APIError>(data: Data?,
-                     response: URLResponse?,
-                     error: Error?,
-                     completion: APICompletion<T, E>) {
+        E: APIError> (data: Data?,
+                      response: URLResponse?,
+                      error: Error?,
+                      completion: APICompletion<T, E>) {
 
         // 1. Check if there is an error, if so, fail immediately
         if let error = error as NSError? {
@@ -92,9 +92,9 @@ private extension CRNetworking {
         self.parse(data, completion: completion)
     }
 
-    func handleErrorData<T: Codable,E: APIError>(_ data: Data,
-                                                 response: HTTPURLResponse,
-                                                 completion: APICompletion<T, E>) {
+    func handleErrorData<T: Codable,E: APIError> (_ data: Data,
+                                                  response: HTTPURLResponse,
+                                                  completion: APICompletion<T, E>) {
 
         do {
 
@@ -107,8 +107,8 @@ private extension CRNetworking {
         }
     }
 
-    func parse<T: Codable, E: APIError>(_ data: Data,
-                                        completion: APICompletion<T, E>) {
+    func parse<T: Codable, E: APIError> (_ data: Data,
+                                         completion: APICompletion<T, E>) {
 
         do {
 
@@ -121,8 +121,8 @@ private extension CRNetworking {
         }
     }
 
-    func parseError<T: Codable, E: APIError>(_ data: Data,
-                                             completion: APICompletion<T, E>) {
+    func parseError<T: Codable, E: APIError> (_ data: Data,
+                                              completion: APICompletion<T, E>) {
 
         self.parse(data, completion: completion)
     }
